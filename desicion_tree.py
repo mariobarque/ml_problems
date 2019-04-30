@@ -1,10 +1,6 @@
-from sklearn.datasets import load_iris
-from sklearn.model_selection import cross_val_score
-from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
 
 
 def convert(data):
@@ -22,7 +18,6 @@ def convert(data):
     return data
 
 
-enc = OneHotEncoder(handle_unknown='ignore')
 df = pd.read_csv('data.csv')
 df = convert(df)
 
@@ -37,5 +32,3 @@ model.fit(x, y)
 y_predict = model.predict(x)
 
 print(y_predict)
-
-
